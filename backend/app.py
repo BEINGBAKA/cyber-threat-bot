@@ -3,9 +3,9 @@ from agents.run_crew import run_crew_pipeline
 from passive_scanner import run_passive_scan        # 🆕 Scanning
 from gpt_analysis import analyze_passive_scan      # 🆕 AI analysis for passive scan
 import os
-
 os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
-os.environ["STREAMLIT_SERVER_PORT"] = "8501"
+os.environ["STREAMLIT_SERVER_PORT"] = os.environ.get("PORT", "8501")
+
 
 
 # Set up the Streamlit app
