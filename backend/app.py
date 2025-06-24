@@ -29,7 +29,7 @@ os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
 os.environ["STREAMLIT_SERVER_PORT"] = os.environ.get("PORT", "8501")
 
 st.set_option("client.showErrorDetails", False)
-st.set_option("global.deprecation.showPyplotGlobalUse", False)
+#st.set_option("global.deprecation.showPyplotGlobalUse", False)
 
 
 # Set up the Streamlit app

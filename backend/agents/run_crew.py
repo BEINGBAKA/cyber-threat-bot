@@ -2,9 +2,9 @@ from agents.crew_agents import fetch_latest_cves, crawling_task, analysis_task, 
 import logging
 from vector_db.chroma_store import add_to_vectordb, clear_vectordb
 
-def run_crew_pipeline(limit=1, keyword="apache"):
+def run_crew_pipeline(limit=3, keyword="apache"):
     # Step 1: Fetch CVEs
-    cves = fetch_latest_cves(limit=1, keyword=keyword)
+    cves = fetch_latest_cves(limit=limit, keyword=keyword)
 
     # ✅ Step 2: Clear vector DB ONCE
     clear_vectordb()
