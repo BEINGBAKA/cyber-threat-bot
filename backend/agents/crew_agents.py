@@ -3,6 +3,7 @@ from scraping.cve_scrapper import fetch_latest_cves
 from gpt_analysis import analyze_threat
 from vector_db.chroma_store import add_to_vectordb
 from gpt_analysis import analyze_passive_scan
+import logging
 
 
 # === AGENT DEFINITIONS ===
@@ -64,3 +65,6 @@ def full_pipeline(limit=5, keyword="apache"):
 
 def passive_analysis_task(raw_scan_data):
     return analyze_passive_scan(raw_scan_data)
+
+
+logging.basicConfig(level=logging.WARNING)  # Instead of DEBUG or INFO

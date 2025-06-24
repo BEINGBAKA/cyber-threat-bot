@@ -3,9 +3,13 @@ from agents.run_crew import run_crew_pipeline
 from passive_scanner import run_passive_scan        # 🆕 Scanning
 from gpt_analysis import analyze_passive_scan      # 🆕 AI analysis for passive scan
 import os
+import logging
+
 os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
 os.environ["STREAMLIT_SERVER_PORT"] = os.environ.get("PORT", "8501")
 
+st.set_option("client.showErrorDetails", False)
+st.set_option("global.deprecation.showPyplotGlobalUse", False)
 
 
 # Set up the Streamlit app
@@ -45,4 +49,8 @@ elif mode == "Passive URL Scan":
             st.success("✅ Passive scan + AI analysis complete!")
         else:
             st.warning("⚠️ Please enter a valid URL.")
+            
+
+logging.basicConfig(level=logging.WARNING)  # Instead of DEBUG or INFO
+
 

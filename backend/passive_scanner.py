@@ -3,6 +3,9 @@ import ssl
 import socket
 import http.client
 from urllib.parse import urlparse
+import logging
+
+
 
 
 def check_ssl_certificate(hostname):
@@ -49,3 +52,7 @@ def run_passive_scan(site_url):
 
     except Exception as e:
         return f"❌ Error during scan: {str(e)}"
+
+
+logging.basicConfig(level=logging.WARNING)  # Instead of DEBUG or INFO
+

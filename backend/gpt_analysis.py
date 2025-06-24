@@ -1,6 +1,6 @@
 import google.generativeai as genai
 import os
-
+import logging
 # Load Gemini API key from environment variable
 api_key = os.getenv("api_key")
 
@@ -38,3 +38,6 @@ def analyze_passive_scan(scan_output: str) -> str:
         return response.text.strip()
     except Exception as e:
         return f"❌ Error analyzing passive scan: {str(e)}"
+
+logging.basicConfig(level=logging.WARNING)  # Instead of DEBUG or INFO
+
