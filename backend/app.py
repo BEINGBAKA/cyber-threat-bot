@@ -4,6 +4,26 @@ from passive_scanner import run_passive_scan        # 🆕 Scanning
 from gpt_analysis import analyze_passive_scan      # 🆕 AI analysis for passive scan
 import os
 import logging
+import shutil
+
+def clear_local_caches():
+    cache_dirs = [
+        os.path.expanduser("~/.cache/huggingface"),
+        os.path.expanduser("~/.chromadb"),
+        os.path.expanduser("~/.cache/torch"),
+    ]
+
+    for cache in cache_dirs:
+        if os.path.exists(cache):
+            try:
+                shutil.rmtree(cache)
+                print(f"🧹 Cleared cache: {cache}")
+            except Exception as e:
+                print(f"⚠️ Failed to clear {cache}: {e}")
+
+
+
+clear_local_caches()
 
 os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
 os.environ["STREAMLIT_SERVER_PORT"] = os.environ.get("PORT", "8501")

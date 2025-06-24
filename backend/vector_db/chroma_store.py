@@ -3,8 +3,6 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.docstore.document import Document
 import logging
 
-
-
 # ✅ Use Hugging Face's free MiniLM embedding model
 embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
@@ -18,5 +16,8 @@ def add_to_vectordb(cve_id, description):
 
 def search_cve(query):
     return vectordb.similarity_search(query, k=3)
+def clear_vectordb():
+    vectordb.delete_collection()
+
 
 logging.basicConfig(level=logging.WARNING)  # Instead of DEBUG or INFO
