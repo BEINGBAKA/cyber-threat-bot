@@ -4,10 +4,6 @@ import socket
 import http.client
 from urllib.parse import urlparse
 import logging
-
-
-
-
 def check_ssl_certificate(hostname):
     try:
         context = ssl.create_default_context()
