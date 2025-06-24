@@ -1,5 +1,5 @@
 # cyber-threat-bot
-A Streamlit-based cybersecurity threat intelligence bot that fetches, analyzes, and summarizes CVEs using Cohere and vector embeddings.
+A Streamlit-based cybersecurity threat intelligence bot that fetches, analyzes, and summarizes CVEs using Gemini and vector embeddings.
 
 #Cyber Threat Intelligence Bot
 
